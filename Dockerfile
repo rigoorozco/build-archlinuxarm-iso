@@ -6,6 +6,6 @@ RUN pacman-key --init && \
     pacman -Syyu --noconfirm base-devel git archlinux-keyring curl tar \
     dosfstools mtools erofs-utils arch-install-scripts rsync squashfs-tools xorriso
 
-RUN git clone https://github.com/ironrobin/archiso-x13s.git && \
-    cd archiso-x13s && \
+RUN git clone https://github.com/rigoorozco/archiso-yoga.git && \
+    cd archiso-yoga && \
     make install
