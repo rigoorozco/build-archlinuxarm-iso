@@ -44,4 +44,4 @@ mkarchiso -v          \
 	-w ${WORK_DIR}    \
 	-o ${OUTPUT_DIR}  \
 	-g ${GPG_KEY}     \
-	${PROJECT_DIR}/configs/x13s
+	${PROJECT_DIR}/configs/yoga
