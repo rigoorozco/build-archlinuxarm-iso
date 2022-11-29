@@ -1,14 +1,12 @@
 FROM archlinux:base-devel as builder
 
-MAINTAINER Chris Fordham <chris@fordham.id.au>
-
 COPY sudoers.d/build /etc/sudoers.d/
 
 RUN pacman-key --init && \
     pacman-db-upgrade && \
     update-ca-trust && \
     pacman -Syyu --noconfirm base-devel git archlinux-keyring curl tar reflector \
-    dosfstools mtools erofs-utils arch-install-scripts rsync squashfs-tools && \
+    dosfstools mtools erofs-utils arch-install-scripts rsync squashfs-tools xorriso && \
     # we do this mostly just because a lot of mirrors are unreliable
     reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 
