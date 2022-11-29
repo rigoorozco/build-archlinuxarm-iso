@@ -10,7 +10,7 @@ mkdir -p ${PROJECT_ROOT}/output
 docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 
 echo "Building Docker image.." && \
-docker build -t agners/archlinuxarm-arm64v8:latest . && \
+docker build -t agners/archlinuxarm-arm64v8:0.1 . && \
 echo "Running Docker build.." &&                 \
 docker run -ti --rm --privileged                 \
 	--name aarch64-iso-builder                   \
@@ -18,6 +18,6 @@ docker run -ti --rm --privileged                 \
 	-v ${PROJECT_ROOT}/work:/work                \
 	-v ${PROJECT_ROOT}/output:/output            \
 	-v ${PROJECT_ROOT}/archiso:/archiso          \
-	agners/archlinuxarm-arm64v8:latest           \
+	agners/archlinuxarm-arm64v8:0.1              \
 	/scripts/build-iso.sh &&                     \
 echo "Build competed successfully!"
