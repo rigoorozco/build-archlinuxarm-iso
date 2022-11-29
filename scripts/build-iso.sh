@@ -40,7 +40,7 @@ curl -O https://lecs.dev/repo/public.asc && \
 pacman-key --add public.asc && \
 pacman-key --lsign 9FD0B48BBBD974B80A3310AB6462EE0B8E382F3F
 
-mkarchiso -v          \
+${PROJECT_DIR}/archiso/mkarchiso -v          \
 	-w ${WORK_DIR}    \
 	-o ${OUTPUT_DIR}  \
 	-g ${GPG_KEY}     \
